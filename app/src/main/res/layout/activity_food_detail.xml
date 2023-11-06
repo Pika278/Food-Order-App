@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="@string/app_name"
+                    android:text="Tên món ăn"
                     android:textSize="@dimen/text_size_normal"
                     android:textStyle="bold" />
                 <LinearLayout
@@ -64,6 +64,7 @@
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/black"
                         android:layout_marginStart="@dimen/define_dimen_5"
+                        android:text="90 000 VND"
                         android:textSize="@dimen/text_size_small" />
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -79,6 +80,7 @@
                             android:textColor="@color/white"
                             android:textSize="@dimen/text_size_xsmall"
                             android:textStyle="bold"
+                            android:text="Giảm 10%"
                             tools:ignore="RelativeOverlap" />
                     </RelativeLayout>
                 </LinearLayout>

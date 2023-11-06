@@ -15,7 +15,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="@dimen/define_dimen_150"
             android:layout_height="@dimen/define_dimen_150"
-            android:src="@drawable/img_logo" />
+            android:src="@drawable/image_no_available" />
 
         <TextView
             android:layout_width="wrap_content"

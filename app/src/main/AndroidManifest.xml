@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name="com.example.foodorderapp.ControllerApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodOrderApp"
         tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
+        <activity android:name="com.example.foodorderapp.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.foodorderapp.activity.MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.foodorderapp.activity.SignInActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.foodorderapp.activity.SignUpActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.foodorderapp.activity.AdminMainActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.foodorderapp.activity.ChangePasswordActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.foodorderapp.activity.ForgotPasswordActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.foodorderapp.activity.FoodDetailActivity"
+            android:exported="false"/>
+        <activity
+            android:name="com.example.foodorderapp.activity.AddFoodActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

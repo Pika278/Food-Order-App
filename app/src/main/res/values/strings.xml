@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="app_name">Food Order App</string>
+<string name="app_name">Chick chick</string>
 
 // Tab Menu
 <string name="home">Đồ ăn</string>
 <string name="cart">Giỏ hàng</string>
-<string name="feedback">Phản hồi</string>
+<string name="feedback">Đánh giá</string>
 <string name="contact">Liên hệ</string>
 <string name="account">Tài khoản</string>
 <string name="order">Đơn hàng</string>
@@ -24,7 +24,7 @@
 <string name="msg_exit_app">Bạn có muốn thoát ứng dụng?</string>
 
 <string name="category_title">Danh mục</string>
-<string name="food_suggest">Gợi ý món ăn</string>
+<string name="food_list">Danh sách món ăn</string>
 <string name="food_detail_title">Chi tiết món ăn</string>
 <string name="add_to_cart">Thêm vào giỏ hàng</string>
 <string name="added_to_cart">Đã thêm vào giỏ hàng</string>
@@ -68,6 +68,7 @@
 <string name="label_payment">Thanh toán:</string>
 <string name="label_menu">Thực đơn:</string>
 <string name="label_popular">Phổ biến:</string>
+<string name="label_feedback">Đánh giá:</string>
 
 <string name="status_new">Chờ xử lý</string>
 <string name="status_cancel">Hủy đơn hàng</string>

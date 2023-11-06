@@ -206,6 +206,17 @@
                 android:textColor="@color/textColorPrimary"
                 android:textSize="@dimen/text_size_small"
                 android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/define_dimen_5"
+                android:text="Đã hoàn thành"/>
         </RelativeLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đánh giá"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

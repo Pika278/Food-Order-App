@@ -33,7 +33,7 @@
         android:layout_centerVertical="true"
         android:layout_marginEnd="@dimen/define_dimen_4"
         android:padding="@dimen/define_dimen_6"
-        android:src="@drawable/ic_cart_white_36"
+        android:src="@drawable/ic_cart_white"
         android:visibility="gone" />
 
 </RelativeLayout>

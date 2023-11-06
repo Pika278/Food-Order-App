@@ -12,7 +12,8 @@
     <color name="blue">#2196F3</color>
     <color name="green">#4CAF50</color>
 
-    <color name="colorPrimary">#FC5353</color>
+    <color name="colorPrimary">#BA0000</color>
+    <color name="colorPrimaryDark">#BA0000</color>
     <color name="textColorPrimary">#121315</color>
     <color name="textColorSecondary">#6D6E70</color>
     <color name="textColorAccent">#A7A9AB</color>
