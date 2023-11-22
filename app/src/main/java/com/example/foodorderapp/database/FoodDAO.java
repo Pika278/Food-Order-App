@@ -8,6 +8,7 @@ import androidx.room.Update;
 
 import com.example.foodorderapp.model.CartFood;
 import com.example.foodorderapp.model.Food;
+import com.example.foodorderapp.model.Order;
 
 import java.util.List;
 

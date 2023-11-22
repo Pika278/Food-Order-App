@@ -1,6 +1,7 @@
 package com.example.foodorderapp.constant;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +10,12 @@ import android.widget.Toast;
 
 import com.example.foodorderapp.activity.AdminMainActivity;
 import com.example.foodorderapp.activity.MainActivity;
+import com.example.foodorderapp.listener.IGetDateListener;
 import com.example.foodorderapp.prefs.DataStoreManager;
+import com.example.foodorderapp.utils.StringUtil;
 
 import java.text.Normalizer;
+import java.util.Calendar;
 import java.util.regex.Pattern;
 
 public class GlobalFunction {
@@ -56,6 +60,31 @@ public class GlobalFunction {
         return pattern.matcher(nfdNormalizedString).replaceAll("");
     }
 
+    public static void showDatePicker(Context context, String currentDate, final IGetDateListener getDateListener) {
+        Calendar mCalendar = Calendar.getInstance();
+        int currentDay = mCalendar.get(Calendar.DATE);
+        int currentMonth = mCalendar.get(Calendar.MONTH);
+        int currentYear = mCalendar.get(Calendar.YEAR);
+        mCalendar.set(currentYear, currentMonth, currentDay);
+
+        if (!StringUtil.isEmpty(currentDate)) {
+            String[] split = currentDate.split("/");
+            currentDay = Integer.parseInt(split[0]);
+            currentMonth = Integer.parseInt(split[1]);
+            currentYear = Integer.parseInt(split[2]);
+            mCalendar.set(currentYear, currentMonth - 1, currentDay);
+        }
+
+        DatePickerDialog.OnDateSetListener callBack = (view, year, monthOfYear, dayOfMonth) -> {
+            String date = StringUtil.getDoubleNumber(dayOfMonth) + "/" +
+                    StringUtil.getDoubleNumber(monthOfYear + 1) + "/" + year;
+            getDateListener.getDate(date);
+        };
+        DatePickerDialog datePicker = new DatePickerDialog(context,
+                callBack, mCalendar.get(Calendar.YEAR), mCalendar.get(Calendar.MONTH),
+                mCalendar.get(Calendar.DATE));
+        datePicker.show();
+    }
 
 
 }

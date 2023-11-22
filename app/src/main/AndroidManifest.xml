@@ -44,6 +44,9 @@
         <activity
             android:name="com.example.foodorderapp.activity.AddFoodActivity"
             android:exported="false"/>
+        <activity android:name="com.example.foodorderapp.activity.OrderHistoryActivity" />
+        <activity android:name="com.example.foodorderapp.activity.AdminReportActivity" />
+        <activity android:name="com.example.foodorderapp.activity.AddNewAdminActivity" />
     </application>
 
 </manifest>

@@ -12,13 +12,14 @@ public class Order implements Serializable {
     private int amount;
     private String foods;
     private int payment;
-    private boolean completed;
+//    private boolean completed;
 
+    private String status;
     public Order() {
     }
 
     public Order(long id, String name, String email, String phone,
-                 String address, int amount, String foods, int payment, boolean completed) {
+                 String address, int amount, String foods, int payment, String status) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -27,7 +28,7 @@ public class Order implements Serializable {
         this.amount = amount;
         this.foods = foods;
         this.payment = payment;
-        this.completed = completed;
+        this.status = status;
     }
 
     public long getId() {
@@ -94,11 +95,18 @@ public class Order implements Serializable {
         this.payment = payment;
     }
 
-    public boolean isCompleted() {
-        return completed;
-    }
+//    public boolean isCompleted() {
+//        return completed;
+//    }
+//
+//    public void setCompleted(boolean completed) {
+//        this.completed = completed;
+//    }
+    public String getStatus() {
+    return status;
+}
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

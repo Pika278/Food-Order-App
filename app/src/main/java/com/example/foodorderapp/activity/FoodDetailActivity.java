@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.example.foodorderapp.event.ReloadListCartEvent;
 import com.example.foodorderapp.model.CartFood;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.example.foodorderapp.R;
@@ -19,6 +20,8 @@ import com.example.foodorderapp.database.FoodDatabase;
 import com.example.foodorderapp.databinding.ActivityFoodDetailBinding;
 import com.example.foodorderapp.model.Food;
 import com.example.foodorderapp.utils.GlideUtils;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -188,6 +191,7 @@ public class FoodDetailActivity extends BaseActivity {
             FoodDatabase.getInstance(FoodDetailActivity.this).foodDAO().insertFood(mCartFood);
             bottomSheetDialog.dismiss();
             setStatusButtonAddToCart();
+            EventBus.getDefault().post(new ReloadListCartEvent());
         });
 
         bottomSheetDialog.show();

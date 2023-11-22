@@ -170,41 +170,6 @@
                 android:textSize="@dimen/text_size_small"
                 android:textColor="@color/textColorSecondary"
                 android:layout_marginTop="@dimen/define_dimen_10"
-                android:text="@string/food_image_banner"/>
-
-            <EditText
-                android:id="@+id/edt_image_banner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/define_dimen_4"
-                android:background="@drawable/bg_white_corner_6_border_gray"
-                android:hint="@string/hint_image_banner"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:padding="@dimen/define_dimen_12"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="@dimen/text_size_small" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/define_dimen_10"
-                android:background="@drawable/bg_white_corner_6_border_gray"
-                android:padding="@dimen/define_dimen_12">
-
-                <CheckBox
-                    android:id="@+id/chb_popular"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/popular" />
-            </RelativeLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/text_size_small"
-                android:textColor="@color/textColorSecondary"
-                android:layout_marginTop="@dimen/define_dimen_10"
                 android:text="@string/food_image_other"/>
 
             <TextView

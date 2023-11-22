@@ -11,7 +11,7 @@ public class Food implements Serializable {
     private int price;
     private int sale;
     private String image;
-    private String banner;
+//    private String banner;
 //    private boolean popular;
     private List<Image> images;
 
@@ -19,14 +19,14 @@ public class Food implements Serializable {
     }
 
     public Food(long id, String name, String description, int price, int sale,
-                      String image, String banner) {
+                      String image) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
         this.sale = sale;
         this.image = image;
-        this.banner = banner;
+//        this.banner = banner;
     }
 
     public long getId() {
@@ -77,13 +77,13 @@ public class Food implements Serializable {
         this.image = image;
     }
 
-    public String getBanner() {
-        return banner;
-    }
-
-    public void setBanner(String banner) {
-        this.banner = banner;
-    }
+//    public String getBanner() {
+//        return banner;
+//    }
+//
+//    public void setBanner(String banner) {
+//        this.banner = banner;
+//    }
 
     public List<Image> getImages() {
         return images;

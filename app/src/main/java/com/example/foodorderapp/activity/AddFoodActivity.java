@@ -63,7 +63,7 @@ public class AddFoodActivity extends BaseActivity {
             mActivityAddFoodBinding.edtPrice.setText(String.valueOf(mCartFood.getPrice()));
             mActivityAddFoodBinding.edtDiscount.setText(String.valueOf(mCartFood.getSale()));
             mActivityAddFoodBinding.edtImage.setText(mCartFood.getImage());
-            mActivityAddFoodBinding.edtImageBanner.setText(mCartFood.getBanner());
+//            mActivityAddFoodBinding.edtImageBanner.setText(mCartFood.getBanner());
             mActivityAddFoodBinding.edtOtherImage.setText(getTextOtherImages());
         } else {
             mActivityAddFoodBinding.toolbar.tvTitle.setText(getString(R.string.add_food));
@@ -92,8 +92,7 @@ public class AddFoodActivity extends BaseActivity {
         String strPrice = mActivityAddFoodBinding.edtPrice.getText().toString().trim();
         String strDiscount = mActivityAddFoodBinding.edtDiscount.getText().toString().trim();
         String strImage = mActivityAddFoodBinding.edtImage.getText().toString().trim();
-        String strImageBanner = mActivityAddFoodBinding.edtImageBanner.getText().toString().trim();
-        boolean isPopular = mActivityAddFoodBinding.chbPopular.isChecked();
+//        String strImageBanner = mActivityAddFoodBinding.edtImageBanner.getText().toString().trim();
         String strOtherImages = mActivityAddFoodBinding.edtOtherImage.getText().toString().trim();
         List<Image> listImages = new ArrayList<>();
         if (!StringUtil.isEmpty(strOtherImages)) {
@@ -129,10 +128,10 @@ public class AddFoodActivity extends BaseActivity {
             return;
         }
 
-        if (StringUtil.isEmpty(strImageBanner)) {
-            Toast.makeText(this, getString(R.string.msg_image_banner_food_require), Toast.LENGTH_SHORT).show();
-            return;
-        }
+//        if (StringUtil.isEmpty(strImageBanner)) {
+//            Toast.makeText(this, getString(R.string.msg_image_banner_food_require), Toast.LENGTH_SHORT).show();
+//            return;
+//        }
 
         // Update food
         if (isUpdate) {
@@ -143,8 +142,7 @@ public class AddFoodActivity extends BaseActivity {
             map.put("price", Integer.parseInt(strPrice));
             map.put("sale", Integer.parseInt(strDiscount));
             map.put("image", strImage);
-            map.put("banner", strImageBanner);
-            map.put("popular", isPopular);
+//            map.put("banner", strImageBanner);
             if (!listImages.isEmpty()) {
                 map.put("images", listImages);
             }
@@ -163,7 +161,7 @@ public class AddFoodActivity extends BaseActivity {
         showProgressDialog(true);
         long foodId = System.currentTimeMillis();
         Food food = new Food(foodId, strName, strDescription, Integer.parseInt(strPrice),
-                Integer.parseInt(strDiscount), strImage, strImageBanner);
+                Integer.parseInt(strDiscount), strImage);
         if (!listImages.isEmpty()) {
             food.setImages(listImages);
         }
@@ -175,8 +173,7 @@ public class AddFoodActivity extends BaseActivity {
             mActivityAddFoodBinding.edtPrice.setText("");
             mActivityAddFoodBinding.edtDiscount.setText("");
             mActivityAddFoodBinding.edtImage.setText("");
-            mActivityAddFoodBinding.edtImageBanner.setText("");
-            mActivityAddFoodBinding.chbPopular.setChecked(false);
+//            mActivityAddFoodBinding.edtImageBanner.setText("");
             mActivityAddFoodBinding.edtOtherImage.setText("");
             GlobalFunction.hideSoftKeyboard(this);
             Toast.makeText(this, getString(R.string.msg_add_food_success), Toast.LENGTH_SHORT).show();
