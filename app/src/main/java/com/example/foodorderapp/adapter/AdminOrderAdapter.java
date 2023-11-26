@@ -79,6 +79,10 @@ public class AdminOrderAdapter extends RecyclerView.Adapter<AdminOrderAdapter.Ad
             holder.mItemAdminOrderBinding.tvStatus.setOnClickListener(
                     v -> iOnClickUpdateStatusListener.onClickUpdateStatusDeliver(order));
         }
+        if(order.getStatus().equalsIgnoreCase("Đang giao hàng")){
+            holder.mItemAdminOrderBinding.tvStatus.setOnClickListener(
+                    v -> iOnClickUpdateStatusListener.onClickUpdateStatusComplete(order));
+        }
 
     }
 

@@ -12,8 +12,6 @@ public class Order implements Serializable {
     private int amount;
     private String foods;
     private int payment;
-//    private boolean completed;
-
     private String status;
     public Order() {
     }
@@ -95,13 +93,6 @@ public class Order implements Serializable {
         this.payment = payment;
     }
 
-//    public boolean isCompleted() {
-//        return completed;
-//    }
-//
-//    public void setCompleted(boolean completed) {
-//        this.completed = completed;
-//    }
     public String getStatus() {
     return status;
 }

@@ -187,7 +187,7 @@ public class CartFragment extends BaseFragment {
                 long id = System.currentTimeMillis();
                 String strEmail = DataStoreManager.getUser().getEmail();
                 Order order = new Order(id, strName, strEmail, strPhone, strAddress,
-                        mAmount, getStringListFoodsOrder(), Constant.TYPE_PAYMENT_CASH, "Đang xử lý đơn hàng");
+                        mAmount, getStringListFoodsOrder(), Constant.TYPE_PAYMENT_CASH, "Chờ xác nhận");
                 ControllerApplication.get(getActivity()).getBookingDatabaseReference()
                         .child(String.valueOf(id))
                         .setValue(order, (error1, ref1) -> {

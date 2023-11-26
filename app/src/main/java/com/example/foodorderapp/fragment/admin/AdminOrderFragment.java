@@ -70,6 +70,11 @@ public class AdminOrderFragment extends BaseFragment {
             public void onClickUpdateStatusDeliver(Order order) {
                 updateStatusOrderDeliver(order);
             }
+
+            @Override
+            public void onClickUpdateStatusComplete(Order order) {
+                updateStatusOrderComplete(order);
+            }
         });
         mFragmentAdminOrderBinding.rcvOrder.setAdapter(mAdminOrderAdapter);
     }
@@ -156,6 +161,13 @@ public class AdminOrderFragment extends BaseFragment {
         }
         ControllerApplication.get(getActivity()).getBookingDatabaseReference()
                 .child(String.valueOf(order.getId())).child("status").setValue("Đang giao hàng");
+    }
+    private void updateStatusOrderComplete(Order order) {
+        if (getActivity() == null) {
+            return;
+        }
+        ControllerApplication.get(getActivity()).getBookingDatabaseReference()
+                .child(String.valueOf(order.getId())).child("status").setValue("Đã hoàn thành");
     }
 
 

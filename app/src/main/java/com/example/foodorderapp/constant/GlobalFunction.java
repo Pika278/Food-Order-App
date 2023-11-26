@@ -118,6 +118,10 @@ public class GlobalFunction {
         context.startActivity(Intent.createChooser(emailIntent, "Send Email"));
     }
     public static void onClickOpenLocation(Context context) {
+            Uri uri = Uri.parse( "geo:Ø, Ø?q=Học viện công nghệ bưu chính viễn thông");
+            Intent intent = new Intent (Intent.ACTION_VIEW, uri);
+            intent.setPackage( "com.google.android.apps.maps" ) ;
+            context.startActivity(intent);
     }
 
     public static void callPhoneNumber(Activity activity) {

@@ -16,7 +16,7 @@ public class CartFood implements Serializable {
     //img trong list food
     private String image;
     //img to trong food detail
-    private String banner;
+//    private String banner;
     private String description;
     private int price;
     private int sale;
@@ -64,14 +64,14 @@ public class CartFood implements Serializable {
     public void setImage(String image) {
         this.image = image;
     }
-
-    public String getBanner() {
-        return banner;
-    }
-
-    public void setBanner(String banner) {
-        this.banner = banner;
-    }
+//
+//    public String getBanner() {
+//        return banner;
+//    }
+//
+//    public void setBanner(String banner) {
+//        this.banner = banner;
+//    }
 
     public String getDescription() {
         return description;
