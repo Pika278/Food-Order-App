@@ -44,11 +44,11 @@ public class MainActivity extends BaseActivity {
                         break;
 
                     case 2:
-                        mActivityMainBinding.bottomNavigation.getMenu().findItem(R.id.nav_feedback).setChecked(true);
+                        mActivityMainBinding.bottomNavigation.getMenu().findItem(R.id.nav_contact).setChecked(true);
                         break;
 
                     case 3:
-                        mActivityMainBinding.bottomNavigation.getMenu().findItem(R.id.nav_contact).setChecked(true);
+                        mActivityMainBinding.bottomNavigation.getMenu().findItem(R.id.nav_feedback).setChecked(true);
                         break;
 
                     case 4:
@@ -64,9 +64,9 @@ public class MainActivity extends BaseActivity {
                 mActivityMainBinding.viewpager2.setCurrentItem(0);
             } else if (id == R.id.nav_cart) {
                 mActivityMainBinding.viewpager2.setCurrentItem(1);
-            } else if (id == R.id.nav_feedback) {
-                mActivityMainBinding.viewpager2.setCurrentItem(2);
             } else if (id == R.id.nav_contact) {
+                mActivityMainBinding.viewpager2.setCurrentItem(2);
+            } else if (id == R.id.nav_feedback) {
                 mActivityMainBinding.viewpager2.setCurrentItem(3);
             } else if (id == R.id.nav_account) {
                 mActivityMainBinding.viewpager2.setCurrentItem(4);

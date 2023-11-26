@@ -15,30 +15,136 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="@dimen/define_dimen_150"
             android:layout_height="@dimen/define_dimen_150"
-            android:src="@drawable/image_no_available" />
-
+            android:src="@drawable/img_logo" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/define_dimen_10"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/text_size_xnormal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/define_dimen_10"
+            android:layout_marginTop="@dimen/define_dimen_30"
             android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/textColorPrimary"
-            android:textSize="@dimen/text_size_small" />
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold" />
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvData"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/define_dimen_14"
-        android:layout_marginStart="@dimen/define_dimen_14"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="@dimen/define_dimen_30"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/layout_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/define_dimen_40"
+                android:layout_height="@dimen/define_dimen_40"
+                android:src="@drawable/ic_facebook"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/black"
+                android:text="Facebook"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_zalo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/define_dimen_40"
+                android:layout_height="@dimen/define_dimen_40"
+                android:src="@drawable/ic_zalo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:text="Zalo"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/define_dimen_40"
+                android:layout_height="@dimen/define_dimen_40"
+                android:src="@drawable/ic_gmail"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/black"
+                android:text="Gmail"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/define_dimen_30">
+        <LinearLayout
+            android:id="@+id/layout_hotline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/define_dimen_40"
+                android:layout_height="@dimen/define_dimen_40"
+                android:src="@drawable/ic_hotline"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/black"
+                android:text="Holine"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/define_dimen_40"
+                android:layout_height="@dimen/define_dimen_40"
+                android:src="@drawable/ic_location"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/define_dimen_5"
+                android:textSize="@dimen/text_size_small"
+                android:textColor="@color/black"
+                android:text="Location"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -7,6 +7,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.foodorderapp.fragment.AccountFragment;
 import com.example.foodorderapp.fragment.CartFragment;
+import com.example.foodorderapp.fragment.ContactFragment;
+import com.example.foodorderapp.fragment.FeedbackFragment;
 import com.example.foodorderapp.fragment.HomeFragment;
 
 public class MainViewPagerAdapter extends FragmentStateAdapter {
@@ -26,10 +28,10 @@ public class MainViewPagerAdapter extends FragmentStateAdapter {
                 return new CartFragment();
 
             case 2:
-//                return new FeedbackFragment();
+                return new ContactFragment();
 
             case 3:
-//                return new ContactFragment();
+                return new FeedbackFragment();
 
             case 4:
                 return new AccountFragment();

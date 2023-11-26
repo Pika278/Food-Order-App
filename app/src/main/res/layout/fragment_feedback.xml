@@ -31,8 +31,8 @@
             android:padding="@dimen/define_dimen_12"
             android:textSize="@dimen/text_size_small" />
 
-        <TextView
-            android:id="@+id/tv_send_feedback"
+        <Button
+            android:id="@+id/btn_send_feedback"
             android:layout_width="@dimen/define_dimen_200"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

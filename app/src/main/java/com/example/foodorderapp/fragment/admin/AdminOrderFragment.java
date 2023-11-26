@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.foodorderapp.listener.IOnClickUpdateStatusListener;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,8 +55,22 @@ public class AdminOrderFragment extends BaseFragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         mFragmentAdminOrderBinding.rcvOrder.setLayoutManager(linearLayoutManager);
         mListOrder = new ArrayList<>();
-        mAdminOrderAdapter = new AdminOrderAdapter(getActivity(), mListOrder,
-                this::handleUpdateStatusOrder);
+        mAdminOrderAdapter = new AdminOrderAdapter(getActivity(), mListOrder, new IOnClickUpdateStatusListener() {
+            @Override
+            public void onClickUpdateStatusConfirm(Order order) {
+                handleUpdateStatusOrderConfirm(order);
+            }
+
+            @Override
+            public void onClickUpdateStatusPrepare(Order order) {
+                updateStatusOrderPrepare(order);
+            }
+
+            @Override
+            public void onClickUpdateStatusDeliver(Order order) {
+                updateStatusOrderDeliver(order);
+            }
+        });
         mFragmentAdminOrderBinding.rcvOrder.setAdapter(mAdminOrderAdapter);
     }
 
@@ -120,12 +135,27 @@ public class AdminOrderFragment extends BaseFragment {
                 });
     }
 
-    private void handleUpdateStatusOrder(Order order) {
+    private void handleUpdateStatusOrderConfirm(Order order) {
         if (getActivity() == null) {
             return;
         }
         ControllerApplication.get(getActivity()).getBookingDatabaseReference()
-                .child(String.valueOf(order.getId())).child("status").setValue("Đang xử lý đơn hàng");
+                .child(String.valueOf(order.getId())).child("status").setValue("Chờ xác nhận");
+    }
+
+    private void updateStatusOrderPrepare(Order order) {
+        if (getActivity() == null) {
+            return;
+        }
+        ControllerApplication.get(getActivity()).getBookingDatabaseReference()
+                .child(String.valueOf(order.getId())).child("status").setValue("Đang chuẩn bị đơn hàng");
+    }
+    private void updateStatusOrderDeliver(Order order) {
+        if (getActivity() == null) {
+            return;
+        }
+        ControllerApplication.get(getActivity()).getBookingDatabaseReference()
+                .child(String.valueOf(order.getId())).child("status").setValue("Đang giao hàng");
     }
 
 

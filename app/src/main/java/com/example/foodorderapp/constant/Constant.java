@@ -11,4 +11,9 @@ public interface Constant {
 
     // Key Intent
     String KEY_INTENT_FOOD_OBJECT = "food_object";
+
+    String LINK_FACEBOOK = "https://www.facebook.com/quyenn.bn/";
+    String PHONE_NUMBER = "+84944732294";
+    String GMAIL = "nguyenquyentdbn2708@gmail.com";
+    String ZALO_LINK = "https://zalo.me/0944732294";
 }

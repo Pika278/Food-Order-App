@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.foodorderapp.R;
 import com.example.foodorderapp.constant.Constant;
 import com.example.foodorderapp.databinding.ItemAdminOrderBinding;
+import com.example.foodorderapp.listener.IOnClickUpdateStatusListener;
 import com.example.foodorderapp.model.Order;
 import com.example.foodorderapp.utils.DateTimeUtils;
 
@@ -19,16 +20,18 @@ public class AdminOrderAdapter extends RecyclerView.Adapter<AdminOrderAdapter.Ad
 
     private Context mContext;
     private final List<Order> mListOrder;
-    private final IUpdateStatusListener mIUpdateStatusListener;
+//    private final IUpdateStatusListener mIUpdateStatusListener;
+//
+//    public interface IUpdateStatusListener {
+//        void updateStatus(Order order);
+//    }
+    private final IOnClickUpdateStatusListener iOnClickUpdateStatusListener;
 
-    public interface IUpdateStatusListener {
-        void updateStatus(Order order);
-    }
-
-    public AdminOrderAdapter(Context mContext, List<Order> mListOrder, IUpdateStatusListener listener) {
+    public AdminOrderAdapter(Context mContext, List<Order> mListOrder, IOnClickUpdateStatusListener iOnClickUpdateStatusListener) {
         this.mContext = mContext;
         this.mListOrder = mListOrder;
-        this.mIUpdateStatusListener = listener;
+        this.iOnClickUpdateStatusListener = iOnClickUpdateStatusListener;
+
     }
 
     @NonNull
@@ -67,8 +70,16 @@ public class AdminOrderAdapter extends RecyclerView.Adapter<AdminOrderAdapter.Ad
             paymentMethod = Constant.PAYMENT_METHOD_CASH;
         }
         holder.mItemAdminOrderBinding.tvPayment.setText(paymentMethod);
-        holder.mItemAdminOrderBinding.tvStatus.setOnClickListener(
-                v -> mIUpdateStatusListener.updateStatus(order));
+
+        if(order.getStatus().equalsIgnoreCase("Chờ xác nhận")){
+            holder.mItemAdminOrderBinding.tvStatus.setOnClickListener(
+                    v -> iOnClickUpdateStatusListener.onClickUpdateStatusPrepare(order));
+        }
+        if(order.getStatus().equalsIgnoreCase("Đang chuẩn bị đơn hàng")){
+            holder.mItemAdminOrderBinding.tvStatus.setOnClickListener(
+                    v -> iOnClickUpdateStatusListener.onClickUpdateStatusDeliver(order));
+        }
+
     }
 
     @Override
